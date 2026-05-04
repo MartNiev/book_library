@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book Library</title>
+		<link rel="stylesheet" href="/static/css/style.css?v={{ getVersion }}" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="entirePage">
+			<header class="pageHeader">
+				<h1>Book Library</h1>
+			</header>
+
+			<!-- <nav class="navMenu">
+				<div>Menu</div>
+				<button type="button"></button>
+				<button type="button"></button>
+			</nav> -->
+
+			<section class="mainSection">
+				<h2 id="sectionHeader">Books</h2>
+				<div id="cardsContainer"></div>
+			</section>
+		</div>
+		<footer class="footer">
+			<div>Main footer</div>
+		</footer>
+
+		<script src="/static/js/frontend.js?v={{ getVersion }}"></script>
+		<script src="/static/js/reload.js?v={{ getVersion }}"></script>
+	</body>
+</html>

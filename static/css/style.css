@@ -1,0 +1,178 @@
+/* Color Palette Neutral Earth Tones */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 0px;
+	padding: 0px;
+	min-width: 750px;
+	height: 100vh;
+}
+
+.entirePage {
+	padding: 15px;
+	min-height: 96%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: #22333b;
+	/* background-color: rgb(60, 81, 100); */
+}
+
+.pageHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	color: rgb(255, 255, 255);
+}
+
+.navMenu {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #eae0d5;
+	border-radius: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.mainSection {
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	min-height: 750px;
+	background-color: #eae0d5;
+	border-radius: 8px;
+}
+
+#sectionHeader {
+	margin-top: 8px;
+}
+
+.footer {
+	position: fixed;
+	background-color: darkgray;
+	width: 100%;
+	bottom: 0px;
+}
+
+#cardsContainer {
+	display: grid;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+
+@media (min-width: 620px) {
+	#cardsContainer {
+		grid-template-columns: repeat(2, auto);
+	}
+}
+
+@media (min-width: 750px) {
+	#cardsContainer {
+		grid-template-columns: repeat(3, auto);
+	}
+}
+
+@media (min-width: 990px) {
+	#cardsContainer {
+		grid-template-columns: repeat(4, auto);
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	padding: 15px;
+	width: 200px;
+	height: 300px;
+	background-color: whitesmoke;
+	border: 1px solid rgb(214, 214, 214);
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px 1px rgba(136, 136, 136, 0.19);
+}
+
+.card.startUpAnimation {
+	animation: cards 0.5s ease forwards;
+}
+
+@keyframes cards {
+	from {
+		opacity: 0;
+		transform: translate(0, -10%);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0%);
+	}
+}
+
+.card:hover {
+	background-color: #c6ac8f;
+	animation: cardHover 0.3s ease forwards;
+}
+
+@keyframes cardHover {
+	from {
+		width: 200px;
+		height: 300px;
+	}
+	to {
+		width: 210px;
+		height: 310px;
+	}
+}
+
+.card.unHover {
+	background-color: whitesmoke;
+	animation: unHover 0.3s ease forwards;
+}
+
+@keyframes unHover {
+	from {
+		width: 210px;
+		height: 310px;
+	}
+	to {
+		width: 200px;
+		height: 300px;
+	}
+}
+#titleSection {
+	width: 100%;
+}
+
+#authorSection {
+	width: 100%;
+}
+
+#quantitySection {
+	width: 100%;
+}
+
+#imageSection {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	border: solid 1px #22333b;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+}
+
+#bookImage {
+	width: 150px;
+}
