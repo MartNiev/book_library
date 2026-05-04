@@ -25,6 +25,11 @@ var books = []book{
 	{ID: "3", Title: "War and Peace", Author: "Leo Tolstoy", ImageSrc: "/static/images/war_and_peace.jpg", Quantity: 6},
 	{ID: "4", Title: "The HouseMaid", Author: "Freida McFadden", ImageSrc: "/static/images/the_housemaid.jpg", Quantity: 6},
 	{ID: "5", Title: "The Hunger Games", Author: "Suzanne Collins", ImageSrc: "/static/images/the_hunger_games.png", Quantity: 6},
+	{ID: "6", Title: "In Search of Lost Time", Author: "Marcel Proust", ImageSrc: "/static/images/in_search_of_lost_time.jpg", Quantity: 2},
+	{ID: "7", Title: "The Great Gatsby", Author: "F. Scott Fitzgerald", ImageSrc: "/static/images/the_great_gatsby.jpg", Quantity: 5},
+	{ID: "8", Title: "War and Peace", Author: "Leo Tolstoy", ImageSrc: "/static/images/war_and_peace.jpg", Quantity: 6},
+	{ID: "9", Title: "The HouseMaid", Author: "Freida McFadden", ImageSrc: "/static/images/the_housemaid.jpg", Quantity: 6},
+	{ID: "10", Title: "The Hunger Games", Author: "Suzanne Collins", ImageSrc: "/static/images/the_hunger_games.png", Quantity: 6},
 }
 
 // Handles all of the routes to the different books and returns the JSON reprensentation of the book.

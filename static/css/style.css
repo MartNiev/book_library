@@ -20,7 +20,6 @@ body {
 	flex-direction: column;
 	gap: 8px;
 	background-color: #22333b;
-	/* background-color: rgb(60, 81, 100); */
 }
 
 .pageHeader {
@@ -43,18 +42,16 @@ body {
 }
 
 .mainSection {
-	padding-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 16px;
 	min-height: 750px;
 	background-color: #eae0d5;
 	border-radius: 8px;
 }
 
 #sectionHeader {
-	margin-top: 8px;
+	padding: 8px;
 }
 
 .footer {
@@ -67,7 +64,7 @@ body {
 #cardsContainer {
 	display: grid;
 	justify-content: center;
-	gap: 10px;
+	gap: 15px;
 	width: 100%;
 }
 
@@ -86,6 +83,12 @@ body {
 @media (min-width: 990px) {
 	#cardsContainer {
 		grid-template-columns: repeat(4, auto);
+	}
+}
+
+@media (min-width: 1250px) {
+	#cardsContainer {
+		grid-template-columns: repeat(5, auto);
 	}
 }
 
@@ -111,7 +114,7 @@ body {
 @keyframes cards {
 	from {
 		opacity: 0;
-		transform: translate(0, -10%);
+		transform: translate(0, -5%);
 	}
 	to {
 		opacity: 1;
@@ -120,59 +123,173 @@ body {
 }
 
 .card:hover {
-	background-color: #c6ac8f;
-	animation: cardHover 0.3s ease forwards;
+	background-color: #d8c6b2;
+	animation: cardHover 0.2s ease forwards;
 }
 
 @keyframes cardHover {
 	from {
-		width: 200px;
-		height: 300px;
+		transform: scale(100%, 100%);
 	}
 	to {
-		width: 210px;
-		height: 310px;
+		transform: scale(105%, 105%);
 	}
 }
 
 .card.unHover {
 	background-color: whitesmoke;
-	animation: unHover 0.3s ease forwards;
+	animation: unHover 0.2s ease forwards;
 }
 
 @keyframes unHover {
 	from {
-		width: 210px;
-		height: 310px;
+		transform: scale(105%, 105%);
 	}
 	to {
-		width: 200px;
-		height: 300px;
+		transform: scale(100%, 100%);
 	}
 }
+
+.card:active {
+	background-color: #c6ac8f;
+}
+
 #titleSection {
+	flex: 1;
 	width: 100%;
 }
 
 #authorSection {
+	flex: 1;
 	width: 100%;
 }
 
 #quantitySection {
+	flex: 1;
 	width: 100%;
 }
 
 #imageSection {
+	flex: 3;
 	justify-content: center;
 	align-items: center;
 	display: flex;
-	border: solid 1px #22333b;
 	margin-bottom: 10px;
 	border-radius: 6px;
 	width: 100%;
-	height: 100%;
+	height: 250px;
 }
 
 #bookImage {
+	height: 100%;
+}
+
+#popUpContainer {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-color: rgba(0, 0, 0, 0.297);
+	backdrop-filter: blur(2px);
+}
+
+#popUpCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	padding: 15px;
+	width: 500px;
+	height: 665px;
+	background-color: whitesmoke;
+	border: 1px solid rgb(214, 214, 214);
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px 1px rgba(136, 136, 136, 0.19);
+	animation: popUpCard 0.2s ease forwards;
+}
+
+@keyframes popUpCard {
+	from {
+		opacity: 0;
+		transform: scale(0%);
+	}
+	to {
+		opacity: 1;
+		transform: scale(100%);
+	}
+}
+
+#imageSectionPopUp {
+	flex: 3;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	width: 100%;
+	height: 500px;
+}
+
+#buttonContainer {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+}
+
+#closeButton {
+	border: none;
+	background-color: whitesmoke;
+}
+
+#closeButton:active {
+	background-color: gainsboro;
+}
+
+#closeButton img {
+	width: 15px;
+}
+
+#cardSubSection {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+
+#infoSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	flex-direction: column;
+}
+
+#buttons button {
 	width: 150px;
+	height: 40px;
+
+	background-color: #eae0d5;
+	border: 0px solid;
+	border-radius: 5px;
+}
+
+#buttons button:hover {
+	background-color: #d8c6b2;
+	border-radius: 5px;
+}
+
+#buttons button:active {
+	background-color: #c6ac8f;
+	border-radius: 5px;
 }

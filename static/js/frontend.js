@@ -3,14 +3,13 @@ function setTextContentAndId(element, elemId, text) {
 	element.id = elemId;
 }
 
-function openCard() {
-	// alert("Card Opened");
-}
-
 function createCard(bookObject) {
 	let card = document.createElement("div");
 	card.className = "card";
-	card.setAttribute("onclick", "openCard()");
+	let objId = bookObject.id;
+	card.id = objId;
+	let onClick = `openCard(${objId})`;
+	card.setAttribute("onclick", onClick);
 
 	let imageSection = document.createElement("div");
 	imageSection.id = "imageSection";
@@ -50,6 +49,8 @@ function createCard(bookObject) {
 function addCardAnimation() {
 	let cards = document.getElementsByClassName("card");
 
+	if (!cards) return alert("Card Element Does Not Exist");
+
 	for (const card of cards) {
 		card.classList.add("startUpAnimation");
 
@@ -69,11 +70,16 @@ function addCardAnimation() {
 function displayingDataInCards(books) {
 	let bookContainer = document.getElementById("cardsContainer");
 
+	let object = {};
+
 	for (const key in books) {
+		object[key] = books[key];
 		let bookObject = books[key];
 		let card = createCard(bookObject);
 		bookContainer.appendChild(card);
 	}
+
+	localStorage.setItem("books", JSON.stringify(object));
 
 	addCardAnimation();
 }
