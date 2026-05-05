@@ -169,7 +169,7 @@ body {
 	width: 100%;
 }
 
-#imageSection {
+.imageSection {
 	flex: 3;
 	justify-content: center;
 	align-items: center;

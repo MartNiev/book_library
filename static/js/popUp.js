@@ -16,13 +16,13 @@ function createSubSection(bookObject) {
 	infoSection.id = "infoSection";
 
 	let title = document.createElement("p");
-	setTextContentAndId(title, "title", "Title: " + bookObject.title);
+	setTextContentAndId(title, "titlePopUp", "Title: " + bookObject.title);
 
 	let author = document.createElement("p");
-	setTextContentAndId(author, "author", "Author: " + bookObject.author);
+	setTextContentAndId(author, "authorPopUp", "Author: " + bookObject.author);
 
 	let quantity = document.createElement("p");
-	setTextContentAndId(quantity, "quantity", "Quantity: " + bookObject.quantity);
+	setTextContentAndId(quantity, "quantityPopUp", "Quantity: " + bookObject.quantity);
 
 	infoSection.appendChild(title);
 	infoSection.appendChild(author);
@@ -108,5 +108,5 @@ function openCard(id) {
 function closePopUp() {
 	document.getElementById("popUpContainer").remove();
 	currrentCard.className = "card";
-	window.location.href = "/";
+	// window.location.href = "/";
 }

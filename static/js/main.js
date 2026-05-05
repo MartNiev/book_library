@@ -12,7 +12,8 @@ function createCard(bookObject) {
 	card.setAttribute("onclick", onClick);
 
 	let imageSection = document.createElement("div");
-	imageSection.id = "imageSection";
+	imageSection.className = "imageSection";
+	// imageSection.id = "imageSection";
 	let img = document.createElement("img");
 	img.id = "bookImage";
 	img.src = bookObject.imageSrc;
@@ -21,21 +22,21 @@ function createCard(bookObject) {
 	imageSection.appendChild(img);
 
 	let titleSection = document.createElement("div");
-	titleSection.id = "titleSection";
+	titleSection.id = "titleSection" + bookObject.id;
 	let title = document.createElement("p");
-	setTextContentAndId(title, "title", "Title: " + bookObject.title);
+	setTextContentAndId(title, "title" + bookObject.id, "Title: " + bookObject.title);
 	titleSection.appendChild(title);
 
 	let authorSection = document.createElement("div");
-	authorSection.id = "authorSection";
+	authorSection.id = "authorSection" + bookObject.id;
 	let author = document.createElement("p");
-	setTextContentAndId(author, "author", "Author: " + bookObject.author);
+	setTextContentAndId(author, "author" + bookObject.id, "Author: " + bookObject.author);
 	authorSection.appendChild(author);
 
 	let quantitySection = document.createElement("div");
-	quantitySection.id = "quantitySection";
+	quantitySection.id = "quantitySection" + bookObject.id;
 	let quantity = document.createElement("p");
-	setTextContentAndId(quantity, "quantity", "Quantity: " + bookObject.quantity);
+	setTextContentAndId(quantity, "quantity" + bookObject.id, "Quantity: " + bookObject.quantity);
 	quantitySection.appendChild(quantity);
 
 	card.appendChild(imageSection);

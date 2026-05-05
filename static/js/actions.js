@@ -1,3 +1,11 @@
+function changeQuantity(id, res) {
+	let quantity = document.getElementById("quantity" + id);
+	let quantityPopUp = document.getElementById("quantityPopUp");
+
+	quantity.textContent = "Quantity: " + res.quantity;
+	quantityPopUp.textContent = "Quantity: " + res.quantity;
+}
+
 function checkoutBook() {
 	let selectedBook = JSON.parse(localStorage.getItem("selectedBook"));
 	console.log(selectedBook);
@@ -7,8 +15,11 @@ function checkoutBook() {
 			let response = await fetch(`/checkout?id=${id}`, { method: "PATCH" });
 
 			let res = await response.json();
+			// console.log(res);
 
-			console.log(res);
+			if (res.message && res.message === "Book not available.") return alert("Book not available.");
+
+			changeQuantity(id, res);
 		} catch (err) {
 			console.log("Error: ", err);
 		}
@@ -26,7 +37,7 @@ function returnBook() {
 
 			let res = await response.json();
 
-			console.log(res);
+			changeQuantity(id, res);
 		} catch (err) {
 			console.log("Error: ", err);
 		}
